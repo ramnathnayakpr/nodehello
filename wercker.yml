@@ -3,6 +3,7 @@ build:
   steps:
     - npm-install:
         package: express
+    - npm-test
     - script:
         name: echo nodejs information
         code: |
