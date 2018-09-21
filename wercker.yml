@@ -3,9 +3,6 @@ build:
   steps:
     - npm-install:
         package: express
-    - npm-test
-    - script:
-        name: echo nodejs information
-        code: |
-          echo "node version $(node -v) running"
-          echo "npm version $(npm -v) running"
+    - internal/watch:
+        code: node nodehello.js
+        reload: true
