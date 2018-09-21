@@ -2,11 +2,7 @@ box: node
 build:
   steps:
     - npm-install
-    - script:
-        name: install express
-        code: |
-          sudo npm install -g express
-    - npm-test
+        package: express
     - script:
         name: echo nodejs information
         code: |
