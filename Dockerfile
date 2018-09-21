@@ -1,4 +1,4 @@
-FROM node
-EXPOSE 5000
-COPY hello.js .
-ENTRYPOINT node hello.js
+FROM node:latest
+COPY nodehello.js /
+RUN npm install express -y
+CMD node nodehello.js
