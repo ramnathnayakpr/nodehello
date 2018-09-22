@@ -7,9 +7,9 @@ build:
 #        code: node nodehello.js
 #        reload: true
     - internal/docker-push: 
-        image-name: werckerhello
+        image-name: nodehello
         username: $USERNAME
         password: $PASSWORD
         registry: https://hub.docker.com
-        repository: $USERNAME/werckertest
+        repository: $USERNAME/nodehello
         tag: latest
