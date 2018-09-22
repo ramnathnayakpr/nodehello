@@ -6,5 +6,3 @@ build:
     - internal/watch:
         code: node nodehello.js
         reload: true
-    - script:
-        code: echo Hello
