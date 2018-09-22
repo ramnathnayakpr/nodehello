@@ -6,3 +6,10 @@ build:
 #    - internal/watch:
 #        code: node nodehello.js
 #        reload: true
+    - internal/docker-push: 
+        image-name: werckerhello
+        username: $USERNAME
+        password: $PASSWORD
+        registry: https://hub.docker.com
+        repository: $USERNAME/werckertest
+        tag: latest
