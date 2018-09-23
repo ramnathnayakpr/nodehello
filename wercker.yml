@@ -7,7 +7,7 @@ build:
 #        code: node nodehello.js
 #        reload: true
     - internal/docker-push: 
-        image-name: nodehello
+#       image-name: nodehello
         username: $USERNAME
         password: $PASSWORD
         registry: https://hub.docker.com
