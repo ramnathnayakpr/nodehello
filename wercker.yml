@@ -3,6 +3,9 @@ build:
   steps:
     - npm-install:
         package: express
+    - script:
+        name: Copy source to root
+        code: copy pipeline/source/* /
     - internal/docker-push: 
         username: $USERNAME
         password: $PASSWORD
