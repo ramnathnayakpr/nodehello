@@ -11,3 +11,13 @@ build:
         password: $PASSWORD
         repository: ramnathn/nodehello
         tag: latest
+deploy:
+  steps:
+    - script:
+        name: echo Deployed
+        code: echo Deployed
+test:
+  steps:
+    - script:
+        name: echo Deployed
+        code: echo Deployed
