@@ -9,6 +9,5 @@ build:
     - internal/docker-push: 
         username: $USERNAME
         password: $PASSWORD
-        registry: https://hub.docker.com/ramnathn
-        repository: nodehello
+        repository: ramnathn/nodehello
         tag: latest
