@@ -3,9 +3,6 @@ build:
   steps:
     - npm-install:
         package: express
-#    - internal/watch:
-#        code: node nodehello.js
-#        reload: true
     - internal/docker-push: 
         username: $USERNAME
         password: $PASSWORD
