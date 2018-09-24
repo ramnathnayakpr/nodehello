@@ -13,3 +13,8 @@ deploy:
     - script:
         name: echo Deployed
         code: echo Deployed
+test:
+  steps:
+    - script:
+        name: echo Deployed
+        code: echo Deployed
