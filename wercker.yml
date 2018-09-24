@@ -3,17 +3,15 @@ build:
   steps:
     - npm-install:
         package: express
+    - script:
+        name: Copy source to root
+        code: copy pipeline/source/* /
     - internal/docker-push: 
         username: $USERNAME
         password: $PASSWORD
         repository: ramnathn/nodehello
         tag: latest
 deploy:
-  steps:
-    - script:
-        name: echo Deployed
-        code: echo Deployed
-test:
   steps:
     - script:
         name: echo Deployed
