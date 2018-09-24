@@ -3,13 +3,12 @@ build:
   steps:
     - npm-install:
         package: express
-    - internal/watch:
-        code: node nodehello.js
-        reload: true
+#    - internal/watch:
+#        code: node nodehello.js
+#        reload: true
     - internal/docker-push: 
-#       image-name: nodehello
         username: $USERNAME
         password: $PASSWORD
-        registry: https://hub.docker.com
+        registry: https://hub.docker.com/ramnathn
         repository: $USERNAME/nodehello
         tag: latest
