@@ -10,5 +10,5 @@ build:
         username: $USERNAME
         password: $PASSWORD
         registry: https://hub.docker.com/ramnathn
-        repository: $USERNAME/nodehello
+        repository: nodehello
         tag: latest
