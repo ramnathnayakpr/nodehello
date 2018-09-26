@@ -1,16 +1,15 @@
 box: node
+
 build:
     steps:
   
     - script:
         name: Install express 
-        code: |
-          npm install express
+        code: npm install express
     
     - script:
         name: Copy files over to root 
-        code: |
-          cp -R /pipeline/source/* /
+        code: cp -R /pipeline/source/* /
     
     - internal/docker-push: 
         username: $USERNAME
