@@ -1,18 +1,31 @@
 box: node
 build:
-  steps:
-    - npm-install:
-        package: express
+    steps:
+  
     - script:
-        name: Copy source to root
-        code: copy pipeline/source/* /
+        name: Install express 
+        code: |
+          npm install express
+    
+    - script:
+        name: Copy files over to root 
+        code: |
+          cp -R /pipeline/source/* /
+    
     - internal/docker-push: 
         username: $USERNAME
         password: $PASSWORD
-        repository: ramnathn/nodehello
+        registry: https://lhr.ocir.io
+        repository: lhr.ocir.io/intrnayak/nodehello
         tag: latest
-deploy:
-  steps:
-    - script:
-        name: echo Deployed
-        code: echo Deployed
+
+rolling-update:
+    steps:
+  
+    - kubectl:
+      server: $KUBERNETES_MASTER
+      username: $KUBERNETES_USERNAME
+      password: $KUBERNETES_PASSWORD
+      insecure-skip-tls-verify: true
+      command: rolling-update nodehello
+      image: ramnathn/nodehello
