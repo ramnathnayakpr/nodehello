@@ -21,6 +21,14 @@ build:
 rolling-update:
     steps:
   
+    - script:
+        name: whoami 
+        code: whoami
+    
+    - script:
+        name: which kubectl 
+        code: which kubectl
+
     - kubectl:
       server: $KUBERNETES_MASTER
       username: $KUBERNETES_USERNAME
