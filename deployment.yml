@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: nodehello
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: nodehello
+    spec:
+      containers:
+        - name: nodehello
+          image: lhr.ocir.io/intrnayak/nodehello
+          ports:
+            - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodehello-service
+  labels:
+    name: nodehello-lb
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+  selector:
+    app: nodehello
+  type: LoadBalancer
