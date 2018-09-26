@@ -11,7 +11,9 @@ build:
         name: Copy files over to root 
         code: cp -R /pipeline/source/* /
     
-    - internal/docker-push: 
+    - internal/docker-push:
+        ports: 80
+        cmd: "node nodehello.js" 
         username: $USERNAME
         password: $PASSWORD
         registry: https://lhr.ocir.io
