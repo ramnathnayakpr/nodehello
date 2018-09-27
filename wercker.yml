@@ -20,7 +20,7 @@ build:
         repository: lhr.ocir.io/intrnayak/nodehello
         tag: latest
 
-rolling-update:
+deploy:
     steps:
 
     - kubectl:
