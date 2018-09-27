@@ -12,6 +12,7 @@ spec:
       containers:
         - name: nodehello
           image: lhr.ocir.io/intrnayak/nodehello:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
 
