@@ -18,7 +18,7 @@ build:
         password: $PASSWORD
         registry: https://lhr.ocir.io
         repository: lhr.ocir.io/intrnayak/nodehello
-        tag: latest
+        tag: $WERCKER_GIT_COMMIT
 
 deploy:
     steps:
@@ -28,4 +28,4 @@ deploy:
       server: $OKE_MASTER
       token: $OKE_TOKEN
       insecure-skip-tls-verify: true
-      command: set image deployment.apps/nodehello nodehello=lhr.ocir.io/intrnayak/nodehello:latest
+      command: set image deployment.apps/nodehello nodehello=lhr.ocir.io/intrnayak/nodehello:$WERCKER_GIT_COMMIT
