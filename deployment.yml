@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
         - name: nodehello
-          image: lhr.ocir.io/intrnayak/nodehello
+          image: lhr.ocir.io/intrnayak/nodehello:latest
           ports:
             - containerPort: 80
 
