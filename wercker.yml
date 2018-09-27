@@ -28,4 +28,4 @@ deploy:
       server: $OKE_MASTER
       token: $OKE_TOKEN
       insecure-skip-tls-verify: true
-      command: apply -f deployment.yml
+      command: set image deployment.apps/nodehello nodehello=lhr.ocir.io/intrnayak/nodehello:latest
