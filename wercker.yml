@@ -24,9 +24,8 @@ rolling-update:
     steps:
 
     - kubectl:
-      server: $KUBERNETES_MASTER
-      username: $KUBERNETES_USERNAME
-      password: $KUBERNETES_PASSWORD
+      name: Deploy to OKE
+      server: $OKE_MASTER
+      token: $OKE_TOKEN
       insecure-skip-tls-verify: true
       command: apply -f deployment.yml
-      image: ramnathn/nodehello
