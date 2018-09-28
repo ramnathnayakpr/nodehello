@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: nodehello
 spec:
-  replicas: 3
+  replicas: 20
   template:
     metadata:
       labels:
