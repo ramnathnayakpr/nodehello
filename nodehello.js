@@ -2,7 +2,7 @@ const express = require('express');
 
 const app = express();
 app.get('/', (req, res) => {
-  res.send(`<html><body><h1>Hello from container ${process.env.HOSTNAME} </h1></body></html>\n`);
+  res.send(`<html><body><h1>Selamat Datang from container ${process.env.HOSTNAME} </h1></body></html>\n`);
 });
 
 app.listen(80);
