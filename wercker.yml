@@ -32,7 +32,7 @@ deploy:
       server: $OKE_MASTER
       token: $OKE_TOKEN
       insecure-skip-tls-verify: true
-      command: kubectl apply -f deployment.yml
+      command: apply -f deployment.yml
 
 #    - kubectl:
 #      name: Deploy to OKE
