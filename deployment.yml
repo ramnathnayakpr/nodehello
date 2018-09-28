@@ -8,6 +8,7 @@ spec:
     metadata:
       labels:
         app: nodehello
+        wercker_git_commit: WERCKER_GIT_COMMIT
     spec:
       containers:
         - name: nodehello
