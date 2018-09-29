@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
         - name: nodehello
-          image: lhr.ocir.io/intrnayak/nodehello:latest
+          image: lhr.ocir.io/intrnayak/nodehello:WERCKER_GIT_COMMIT
           imagePullPolicy: Always
           ports:
             - containerPort: 80
