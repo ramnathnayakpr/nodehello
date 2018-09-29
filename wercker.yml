@@ -23,20 +23,20 @@ build:
 deploy:
     steps:
 
-    - script:
-        name: Replace WERCKER_GIT_COMMIT with actual value
-        code: sed -i.bak s/WERCKER_GIT_COMMIT/$WERCKER_GIT_COMMIT/g deployment.yml
+    # - script:
+    #     name: Replace WERCKER_GIT_COMMIT with actual value
+    #     code: sed -i.bak s/WERCKER_GIT_COMMIT/$WERCKER_GIT_COMMIT/g deployment.yml
+
+    # - kubectl:
+    #   name: Deploy to OKE
+    #   server: $OKE_MASTER
+    #   token: $OKE_TOKEN
+    #   insecure-skip-tls-verify: true
+    #   command: apply -f deployment.yml
 
     - kubectl:
-      name: Deploy to OKE
-      server: $OKE_MASTER
-      token: $OKE_TOKEN
-      insecure-skip-tls-verify: true
-      command: apply -f deployment.yml
-
-#    - kubectl:
-#      name: Deploy to OKE
-#      server: $OKE_MASTER
-#      token: $OKE_TOKEN
-#      insecure-skip-tls-verify: true
-#      command: set image deployment.apps/nodehello nodehello=lhr.ocir.io/intrnayak/nodehello:$WERCKER_GIT_COMMIT
+        name: Deploy to OKE
+        server: $OKE_MASTER
+        token: $OKE_TOKEN
+        insecure-skip-tls-verify: true
+        command: set image deployment.apps/nodehello nodehello=lhr.ocir.io/intrnayak/nodehello:$WERCKER_GIT_COMMIT
