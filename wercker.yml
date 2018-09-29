@@ -2,7 +2,6 @@ box: node
 
 build:
     steps:
-  
     - script:
         name: Install express 
         code: npm install express
@@ -18,24 +17,18 @@ build:
         password: $PASSWORD
         registry: https://lhr.ocir.io
         repository: lhr.ocir.io/intrnayak/nodehello
-        tag:
-            - $WERCKER_GIT_COMMIT
-            - latest
+        tag: $WERCKER_GIT_COMMIT
+    - internal/docker-push:
+        ports: 80
+        cmd: "node nodehello.js" 
+        username: $USERNAME
+        password: $PASSWORD
+        registry: https://lhr.ocir.io
+        repository: lhr.ocir.io/intrnayak/nodehello
+        tag: latest
 
 deploy:
     steps:
-
-    # - script:
-    #     name: Replace WERCKER_GIT_COMMIT with actual value
-    #     code: sed -i.bak s/WERCKER_GIT_COMMIT/$WERCKER_GIT_COMMIT/g deployment.yml
-
-    # - kubectl:
-    #   name: Deploy to OKE
-    #   server: $OKE_MASTER
-    #   token: $OKE_TOKEN
-    #   insecure-skip-tls-verify: true
-    #   command: apply -f deployment.yml
-
     - kubectl:
         name: Deploy to OKE
         server: $OKE_MASTER
