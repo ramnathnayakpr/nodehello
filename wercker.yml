@@ -19,6 +19,7 @@ build:
         registry: https://lhr.ocir.io
         repository: lhr.ocir.io/intrnayak/nodehello
         tag: $WERCKER_GIT_COMMIT
+        tag: latest
 
 deploy:
     steps:
