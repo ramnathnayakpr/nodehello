@@ -26,7 +26,7 @@ deploy:
         token:      $OKE_TOKEN
         deployment: nodehello 
         old-image:  nodehello 
-        new-image:  lhr.ocir.io/intrnayak/nodehello 
+        new-image:  lhr.ocir.io/intrnayak/nodehello:$WERCKER_GIT_COMMIT
         type:       rolling-update
     # - kubectl:
     #     name: Deploy to OKE
